@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go mod init:*)",
+      "Bash(go version:*)",
+      "Bash(go get:*)",
+      "Bash(go run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: initialize AI native workflow project with UUID support\n\n- Add comprehensive README documenting AI collaboration friction points\n  and three-pillar AI native workflow framework (executable specs,\n  persistent context, orchestratable actions)\n- Initialize Go module with google/uuid dependency for unique ID generation\n- Add basic hello.go example demonstrating UUID functionality\n- Include standard .gitignore for Go projects\n\nThis establishes the foundation for an AI-native development workflow\nwith proper tooling and documentation structure.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "WebFetch(domain:*.golang.org)",
+      "mcp__github"
+    ],
+    "deny": [
+      "Bash(rm:-rf:*)",
+      "Bash(git:push:--force)",
+      "Read(./.env*)",
+      "Read(./secrets/**)",
+      "Read(~/.ssh/*)",
+      "Read(//etc/passwd)",
+      "Write(./go.mod)",
+      "Edit(/docs/**)"
+    ],
+    "ask": [
+      "Bash(git:commit:*)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false
+  }
+}
