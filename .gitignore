@@ -1,0 +1,54 @@
+# Gitignore for Go projects
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dylib
+*.pyc
+
+# Test coverage output
+cover.out
+
+# Build artifacts
+build/
+
+# Dependency directories (can be ignored if you're using a vendoring tool)
+vendor/
+
+# Go module cache
+**/pkg/mod/
+
+# Go workspace settings
+Gopkg.lock
+Gopkg.toml
+
+# Go test cache
+testdb*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.tmp
+*.bak
+*.log
+*.orig
+*.rej
+*~
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.class
+*.csproj
+*.sublime-project
+*.sublime-workspace
