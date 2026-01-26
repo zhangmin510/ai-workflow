@@ -1,0 +1,81 @@
+# 小红书自动创作工作流配置文件
+
+# 火山引擎豆包模型配置
+doubao:
+  api_key: "dd35f201-7f3f-4f72-934a-6a8a0f8afdfd"
+  model: "doubao-seed-1-8-251228"
+  temperature: 0.8
+  max_tokens: 1000
+
+# 小红书配置
+xiaohongshu:
+  cookie: "your_xiaohongshu_cookie_here"
+  user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1"
+  topics:
+    - "美食"
+    - "旅行"
+    - "时尚"
+    - "美妆"
+    - "健身"
+
+# 图片生成配置
+image_generator:
+  provider: "dall-e"  # 可选: dall-e, stable-diffusion, midjourney
+  api_key: "your_image_api_key_here"
+  style: "小红书风格, 明亮色调, 高清画质, 适合移动端展示"
+
+# 工作流配置
+workflow:
+  schedule: "0 9 * * *"  # 每天早上9点执行
+  max_posts_per_day: 3
+  enable_auto_publish: false  # 自动发布开关，建议先设为false预览效果
+  enable_image_generation: true
+  enable_topic_crawling: true
+
+# 文案模板
+prompt_templates:
+  food: |
+    请以小红书风格写一篇关于{topic}的笔记，包含以下要素：
+    1. 引人入胜的标题（使用emoji）
+    2. 第一人称真实体验
+    3. 详细的评测和推荐理由
+    4. 实用的小贴士
+    5. 合适的话题标签（5-8个）
+    
+    例子：
+    "🍜上海最正宗的兰州拉面！一口穿越到大西北"
+    
+    要求：语言生动活泼，符合小红书用户喜好，避免广告感。
+  
+  travel: |
+    请以小红书风格写一篇关于{topic}的旅行攻略，包含以下要素：
+    1. 吸睛的标题（使用emoji）
+    2. 行程规划和时间安排
+    3. 必打卡景点和隐藏玩法
+    4. 美食推荐和住宿建议
+    5. 实用的旅行小贴士
+    6. 合适的话题标签（5-8个）
+    
+    要求：充满感染力，让读者产生强烈的出行欲望。
+
+# 关键词库
+keywords:
+  food:
+    - "隐藏菜单"
+    - "性价比之王"
+    - "本地人推荐"
+    - "必吃打卡"
+    - "人均50元"
+  
+  travel:
+    - "小众景点"
+    - "自由行攻略"
+    - "拍照圣地"
+    - "避坑指南"
+    - "人均1000元"
+
+# 输出配置
+output:
+  save_dir: "./output"
+  format: "markdown"  # 可选: markdown, html, json
+  include_images: true
